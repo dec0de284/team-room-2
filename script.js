@@ -57,3 +57,27 @@ document.querySelectorAll(".add-btn").forEach(function (button) {
         }, 1200);
     });
 });
+
+// 1. Select the image
+const image = document.querySelector('.hero-image img');
+
+// 2. Create a helper function to pause the loop
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+// 3. Create an async function to run the loop
+async function rotateWithLoop() {
+    // Loop from 180 degrees (your starting point) to 360 degrees
+    let degree = 0;
+    while (true) 
+        {
+            if (degree == 360) {
+                degree = 0;
+            }
+            image.style.rotate = `${degree}deg`;
+            degree++;
+            await sleep(30); 
+        }
+}
+
+// 4. Call the function
+rotateWithLoop();

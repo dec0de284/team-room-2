@@ -60,12 +60,6 @@ button {
     color: white;
 }
 
-.navbar-logo {
-    display: block;
-    width: 75px;
-    height: auto;
-}
-
 .logo {
     display: inline-flex;
     align-items: center;
@@ -76,7 +70,11 @@ button {
     white-space: nowrap;
 }
 .logo > span:last-child {
-    color: #fcb316;
+    color: #ffb629;
+}
+
+.logo-icon {
+    font-size: 1.7rem;
 }
 
 .nav-links {
@@ -112,4 +110,540 @@ button {
 .menu-toggle {
     display: none;
     cursor: pointer;
+}
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+
+    min-height: 70vh;
+    padding: 4rem 8%;
+
+    background-color: #21180f;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(20, 15, 10, 0.96),
+            rgba(20, 15, 10, 0.45)
+        ),
+        url("/static/img/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Decorative glow without extra HTML */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    top: -8rem;
+    left: -8rem;
+    border-radius: 50%;
+    background-color: rgba(255, 182, 41, 0.12);
+    filter: blur(2rem);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    max-width: 36rem;
+}
+
+.eyebrow {
+    margin: 0 0 0.75rem;
+    color: #ffb629;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.15rem;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #ffb629;
+}
+
+.hero-description {
+    max-width: 30rem;
+    margin: 1.25rem 0 2rem;
+    color: #eeeeee;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 32rem;
+    height: auto;
+}
+
+.hero-image img {
+    box-shadow: 0 .5rem 1rem #ffb629;
+    transition: rotate 0.4s ease;
+    border-radius: 50%;
+}
+
+.hero-image img:hover {
+    transform: scale(1.03);
+}
+/* =====================================
+   4. BUTTONS
+===================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    border: 2px solid transparent;
+    border-radius: 2rem;
+
+    background-color: #ffb629;
+    color: #171717;
+
+    font-weight: 700;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffd16d;
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(255, 182, 41, 0.2);
+}
+
+.btn:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 3px solid #ffb629;
+    outline-offset: 4px;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+/* =====================================
+   5. BURGER MENU CARDS
+===================================== */
+
+.menu-section {
+    padding: 5rem 6%;
+}
+
+.section-heading {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.section-heading > p:last-child {
+    color: #6a6a6a;
+}
+
+.section-heading h2::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 0.25rem;
+    margin: 0.75rem auto 0;
+    border-radius: 1rem;
+    background-color: #ffb629;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.burger-card {
+    overflow: hidden;
+    min-width: 0;
+    border: 1px solid #eee4d7;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.burger-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+    height: 12rem;
+    overflow: hidden;
+}
+
+.card-image img {
+    transition: transform 0.4s ease;
+}
+
+.burger-card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 1.25rem;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.3;
+}
+
+.card-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.card-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.price {
+    color: #a85d00;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.add-btn {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.85rem;
+}
+
+/* =====================================
+   6. BENEFITS SECTION
+===================================== */
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+
+    padding: 3rem 8%;
+    background-color: #171717;
+    color: white;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.benefit-icon {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: #302719;
+    font-size: 1.5rem;
+}
+
+.benefit h3 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.benefit p {
+    margin: 0.25rem 0 0;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+/* =====================================
+   7. FOOTER AND FIXED BUTTON
+===================================== */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 2rem 6%;
+    background-color: #0e0e0e;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 900;
+
+    display: grid;
+    place-items: center;
+
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+
+    background-color: #ffb629;
+    color: #171717;
+    font-size: 1.5rem;
+    font-weight: 800;
+
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-4px);
+}
+
+/* =====================================
+   8. TABLET: 768px - 1023px
+===================================== */
+
+@media (max-width: 1023px) {
+    .navbar {
+        padding-inline: 4%;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero {
+        gap: 2rem;
+        padding-inline: 5%;
+    }
+
+    .hero-image {
+        height: 18rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .benefits {
+        padding-inline: 5%;
+        gap: 1.25rem;
+    }
+}
+
+/* =====================================
+   9. MOBILE: 767px AND BELOW
+===================================== */
+
+@media (max-width: 767px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+
+        width: 2.75rem;
+        height: 2.75rem;
+        padding: 0.5rem;
+
+        border: 1px solid #454545;
+        border-radius: 0.5rem;
+        background-color: transparent;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background-color: white;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    /* Slide-in navigation panel */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        width: min(85vw, 22rem);
+        min-height: 100vh;
+        padding: 1.5rem;
+
+        background-color: #171717;
+        box-shadow: -0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.2);
+
+        transform: translateX(105%);
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            transform 0.35s ease,
+            visibility 0.35s ease;
+    }
+
+    .nav-links a {
+        padding: 1rem 0.5rem;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-links .nav-order {
+        margin-top: 1rem;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    /* JavaScript adds this class when opened */
+    .nav-links.active {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Animate the hamburger into an X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+
+        min-height: auto;
+        padding: 3rem 6%;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: none;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: none;
+        height: 17rem;
+    }
+
+    .menu-section {
+        padding: 3.5rem 5%;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .card-image {
+        height: 10rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .card-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 8%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* =====================================
+   10. SMALL MOBILE: 400px AND BELOW
+===================================== */
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image {
+        height: 13rem;
+    }
 }
