@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger House | Fresh & Delicious</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/dec0de284/team-room-2/refs/heads/main/style.css">
+    <script src="https://raw.githubusercontent.com/dec0de284/team-room-2/refs/heads/main/script.js" defer></script>
 </head>
+
 <body>
-     <!-- Navigation -->
     <header class="navbar">
         <a href="#home" class="logo">
-            <span class="logo-icon"><img src="static/img/logo.jpg" alt="Logo"></span>
+            <span class="logo-icon"><img src="https://raw.githubusercontent.com/dec0de284/team-room-2/refs/heads/main/static/img/logo.jpg" alt="Logo"></span>
             <span>Mixtape</span>
             <span>Visions</span>
         </a>
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="navLinks"
-        >
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"
+            aria-controls="navLinks">
             <span></span>
             <span></span>
             <span></span>
@@ -34,127 +30,78 @@
             <a href="#menu" class="nav-order">Order Now</a>
         </nav>
     </header>
-    
+
     <main>
-        <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <p class="eyebrow">CUSTOM • HANDCRAFTED • ANALOG</p>
-
                 <h1>
                     YOUR SOUND.<br>
                     <span>YOUR VISION.</span>
                 </h1>
-
                 <p class="hero-description">
-                    Whether you are an artist craving a physical release for your music or a nostalgic soul looking to gift a personalized mixtape, we bring your playlist to life with custom CDs, cassettes, and premium display frames.
+                    Whether you are an artist craving a physical release for your music or a nostalgic soul looking to
+                    gift a personalized mixtape, we bring your playlist to life with custom CDs, cassettes, and premium
+                    display frames.
                 </p>
-
                 <a href="#menu" class="btn">Explore Our Formats</a>
             </div>
-
             <div class="hero-image">
-                <img
-                    src="static/img/hero-image.jpg"
-                    alt="Juicy cheeseburger with lettuce, tomato, and cheese"
-                >
+                <img src="https://raw.githubusercontent.com/dec0de284/team-room-2/refs/heads/main/static/img/hero-image.jpg" alt="Custom formatted physical music pieces">
             </div>
         </section>
 
-        <!-- Menu Section -->
         <section class="menu-section" id="menu">
             <div class="section-heading">
                 <p class="eyebrow">HANDCRAFTED MEMORIES</p>
                 <h2>OUR FEATURED ITEMS</h2>
                 <p>High-quality custom physical pieces to celebrate your music milestones.</p>
             </div>
-
             <div class="menu-grid">
-
                 <article class="burger-card">
                     <div class="card-image">
-                        <img
-                            src="static\img\mixtape_image (1).jpg"
-                            alt="Classic cheeseburger"
-                            loading="lazy"
-                        >
+                        <img src="https://raw.githubusercontent.com/dec0de284/team-room-2/refs/heads/main/static/img/mixtape_image%20(1).jpg" alt="Mixtape Club Sticker Pack" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3>MIXTAPE CLUB STICKER PACK</h3>
                         <p>8 stickers. One loud little pack.</p>
                         <div class="card-bottom">
                             <span class="price">₱100.00</span>
-                            <button class="btn add-btn" type="button">
-                                Add to Cart
-                            </button>
+                            <button class="btn add-btn" type="button">Add to Cart</button>
                         </div>
                     </div>
                 </article>
 
                 <article class="burger-card">
                     <div class="card-image">
-                        <img
-                            src="static\img\mixtape_image (4).jpg"
-                            alt="Barbecue burger with a toasted bun"
-                            loading="lazy"
-                        >
+                        <img src="https://raw.githubusercontent.com/dec0de284/team-room-2/refs/heads/main/static/img/mixtape_image%20(4).jpg" alt="Album Cover & CDs" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3>Album Cover & CDs</h3>
                         <p>Tangible physical copies of your music and album art.</p>
                         <div class="card-bottom">
-                            <span class="price">₱249</span>
-                            <button class="btn add-btn" type="button">
-                                Add to Cart
-                            </button>
+                            <span class="price">₱249.00</span>
+                            <button class="btn add-btn" type="button">Add to Cart</button>
                         </div>
                     </div>
                 </article>
 
                 <article class="burger-card">
                     <div class="card-image">
-                        <img
-                            src="static\img\mixtape_image (5).jpg"
-                            alt="Double beef burger with melted cheese"
-                            loading="lazy"
-                        >
+                        <img src="https://raw.githubusercontent.com/dec0de284/team-room-2/refs/heads/main/static/img/mixtape_image%20(5).jpg" alt="Glass-framed CDs" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3>Glass-framed CDs</h3>
                         <p>The perfect way to display your first album or your highest-streaming tracks.</p>
                         <div class="card-bottom">
-                            <span class="price">₱289</span>
-                            <button class="btn add-btn" type="button">
-                                Add to Cart
-                            </button>
+                            <span class="price">₱289.00</span>
+                            <button class="btn add-btn" type="button">Add to Cart</button>
                         </div>
                     </div>
                 </article>
-
-                <!-- <article class="burger-card">
-                    <div class="card-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=80"
-                            alt="Special house burger with fresh toppings"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="card-content">
-                        <h3>House Special</h3>
-                        <p>Our signature burger with a secret house sauce.</p>
-                        <div class="card-bottom">
-                            <span class="price">₱269</span>
-                            <button class="btn add-btn" type="button">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                </article> -->
-
             </div>
         </section>
 
-        <!-- About / Benefits -->
         <section class="benefits" id="about">
             <div class="benefit">
                 <span class="benefit-icon">💿</span>
@@ -163,7 +110,6 @@
                     <p>Crystal-clear prints and durable, high-grade frames.</p>
                 </div>
             </div>
-
             <div class="benefit">
                 <span class="benefit-icon">🎨</span>
                 <div>
@@ -171,7 +117,6 @@
                     <p>Any album, playlist, or milestone design you want.</p>
                 </div>
             </div>
-
             <div class="benefit">
                 <span class="benefit-icon">✨</span>
                 <div>
@@ -181,17 +126,16 @@
             </div>
         </section>
     </main>
-      <!-- Footer -->
+
     <footer id="contact">
         <a href="#home" class="logo">
             MIXTAPE<span>House</span>
         </a>
         <p>For faster Delivery Call us at ☎️ 1192456 </p>
-        <p>Fresh burgers. Happy people. © 2026 Burger House.</p>
+        <p>Fresh vibes. Happy people. © 2026 Mixtape House.</p>
     </footer>
-    <!-- Back to top button -->
-    <a href="#home" class="back-to-top" aria-label="Back to top">
-        ↑
-    </a>
+
+    <a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
 </body>
+
 </html>
