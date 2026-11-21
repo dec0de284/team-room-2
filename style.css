@@ -17,6 +17,7 @@ body {
     line-height: 1.6;
     color: #111111;
     background-color: #F7EFE3;
+    overflow-x: hidden;
 }
 
 img {
@@ -26,14 +27,14 @@ img {
     object-fit: cover;
 }
 
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 a {
     color: inherit;
     text-decoration: none;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -43,21 +44,16 @@ button {
 /* =====================================
    2. NAVIGATION
 ===================================== */
-
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-
     padding: 1.2rem 6%;
     background-color: #1C3B2B;
     border-bottom: 4px solid #C86030;
-    box-shadow: none;
     color: white;
 }
 
@@ -65,14 +61,15 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-
     font-size: 1.4rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.02em;
     white-space: nowrap;
+    z-index: 1001;
 }
-.logo > span:last-child {
+
+.logo>span:last-child {
     color: #C86030;
 }
 
@@ -81,6 +78,8 @@ button {
     mix-blend-mode: normal;
     isolation: isolate;
     font-size: 1.7rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .nav-links {
@@ -94,7 +93,7 @@ button {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: color 0.1s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .nav-links a:hover,
@@ -108,55 +107,42 @@ button {
     border: 2px solid #111111;
     background-color: #F7EFE3;
     color: #111111;
-    /* retro style  */
     box-shadow: 4px 4px 0px 0px #111111;
-     transition: transform 0.1s ease, box-shadow 0.1s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
 }
 
 .nav-links .nav-order:hover {
     background-color: #FFFFFF;
     color: #111111;
-    transform: translate(2px,2px);
-    box-shadow: 2px 2px 0px 0px;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px #111111;
 }
 
-/* Hidden on desktop */
 .menu-toggle {
     display: none;
     cursor: pointer;
+    z-index: 1001;
 }
 
 /* =====================================
    3. HERO SECTION
 ===================================== */
-
 .hero {
     position: relative;
     overflow: hidden;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 3rem;
-
     min-height: 70vh;
     padding: 4rem 8%;
-
     background-color: #C86030;
-;
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(28, 59, 43, 0.95),
-            rgba(200, 96, 48, 0.45)
-        ),
-        url("/static/img/hero-bg.jpg");
+    background-image: linear-gradient(90deg, rgba(28, 59, 43, 0.95), rgba(200, 96, 48, 0.45)), url("/static/img/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     color: white;
 }
 
-/* Decorative glow without extra HTML */
 .hero::before {
     content: "";
     position: absolute;
@@ -179,7 +165,7 @@ button {
 
 .eyebrow {
     margin: 0 0 0.75rem;
-    color: #1C3B2B
+    color: #1C3B2B;
     font-size: 0.85rem;
     font-weight: 900;
     letter-spacing: 0.2rem;
@@ -208,44 +194,37 @@ button {
 
 .hero-image {
     flex: 1;
+    width: 100%;
     max-width: 32rem;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image img {
     box-shadow: 0 1rem 3rem rgba(28, 59, 43, 0.4);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 50%;
-  
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
 }
 
-.hero-image img:hover {
-    transform: scale(1.04) rotate(5deg);
-}
 /* =====================================
    4. BUTTONS
 ===================================== */
-
 .btn {
     display: inline-block;
     padding: 0.8rem 1.6rem;
     border: 2px solid #111111;
     border-radius: 4px;
-
     background-color: #C86030;
     color: #FFFFFF;
-
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     cursor: pointer;
-
     box-shadow: 5px 5px 0px 0px #111111;
-
-    transition:
-        background-color 0.1s ease,
-        transform 0.1s ease,
-        box-shadow 0.1s ease;
+    transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .btn:hover {
@@ -254,20 +233,14 @@ button {
     box-shadow: 3px 3px 0px 0px #111111;
 }
 
-.btn:focus-visible,
-.menu-toggle:focus-visible {
-    outline: 3px solid #C86030;
-    outline-offset: 4px;
-}
-
 .btn:active {
     transform: translate(4px, 4px);
     box-shadow: 1px 1px 0px 0px #111111;
 }
-/* =====================================
-   5. BURGER MENU CARDS
-===================================== */
 
+/* =====================================
+   5. MENU CARDS
+===================================== */
 .menu-section {
     padding: 5rem 6%;
 }
@@ -286,7 +259,7 @@ button {
     color: #1C3B2B;
 }
 
-.section-heading > p:last-child {
+.section-heading>p:last-child {
     color: #555555;
     font-size: 1.05rem;
     margin-top: 0.5rem;
@@ -303,23 +276,22 @@ button {
 
 .menu-grid {
     display: grid;
-    /* grid-template-columns: repeat(4, minmax(0, 1fr)); */
-    justify-content: center;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .burger-card {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     min-width: 0;
-    border: 3px solid #111111; 
+    border: 3px solid #111111;
     border-radius: 8px;
     background-color: white;
-    box-shadow: 6px 6px 0px 0px #1C3B2B; 
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+    box-shadow: 6px 6px 0px 0px #1C3B2B;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .burger-card:hover {
@@ -328,13 +300,13 @@ button {
 }
 
 .card-image {
-    height: 13rem;
+    height: 15rem;
     overflow: hidden;
     border-bottom: 3px solid #111111;
 }
 
 .card-image img {
-   transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .burger-card:hover .card-image img {
@@ -344,6 +316,7 @@ button {
 .card-content {
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 0.65rem;
     padding: 1.25rem;
 }
@@ -359,6 +332,7 @@ button {
     margin: 0;
     color: #555555;
     font-size: 0.9rem;
+    flex: 1;
 }
 
 .card-bottom {
@@ -367,7 +341,8 @@ button {
     justify-content: space-between;
     align-items: center;
     gap: 0.75rem;
-    margin-top: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
 }
 
 .price {
@@ -381,26 +356,21 @@ button {
     font-size: 0.85rem;
     box-shadow: 3px 3px 0px 0px #111111;
 }
+
 .add-btn:hover {
     transform: translate(1px, 1px);
     box-shadow: 2px 2px 0px 0px #111111;
-}
-.add-btn:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0px 0px 0px 0px #111111;
 }
 
 /* =====================================
    6. BENEFITS SECTION
 ===================================== */
-
 .benefits {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-
     padding: 4rem 8%;
-    background-color: #1C3B2B; /* Dark vintage forest green container shelf */
+    background-color: #1C3B2B;
     border-top: 4px solid #111111;
     border-bottom: 4px solid #111111;
     color: white;
@@ -410,18 +380,18 @@ button {
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    min-width: 0;
 }
 
 .benefit-icon {
     display: grid;
     flex-shrink: 0;
     place-items: center;
-
     width: 3.5rem;
     height: 3.5rem;
     border: 2px solid #111111;
     border-radius: 4px;
-    background-color: #C86030; /* Terracotta badge background blocks */
+    background-color: #C86030;
     color: white;
     font-size: 1.5rem;
     box-shadow: 3px 3px 0px 0px #111111;
@@ -440,19 +410,18 @@ button {
     color: #F7EFE3;
     font-size: 0.9rem;
 }
-/* =====================================
-   7. FOOTER AND FIXED BUTTON
-===================================== */
 
+/* =====================================
+   7. FOOTER AND MISC
+===================================== */
 footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-
     padding: 2rem 6%;
-    background-color:  #111111;
+    background-color: #111111;
     color: white;
 }
 
@@ -470,20 +439,16 @@ footer p {
     right: 1.5rem;
     bottom: 1.5rem;
     z-index: 900;
-
     display: grid;
     place-items: center;
-
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-
     background-color: #C86030;
     color: white;
     font-size: 1.5rem;
     font-weight: 900;
-
-    transition: transform 0.1s ease, box-shadow 0.1s eas
+    transition: transform 0.1s ease;
 }
 
 .back-to-top:hover {
@@ -491,58 +456,21 @@ footer p {
 }
 
 /* =====================================
-   8. TABLET: 768px - 1023px
+   8. TABLET RESPONSIVENESS (<= 1023px)
 ===================================== */
-
 @media (max-width: 1023px) {
-    .navbar {
-        padding-inline: 4%;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .hero {
-        gap: 2rem;
-        padding-inline: 5%;
-    }
-
-    .hero-image {
-        height: 18rem;
-    }
-
-    .menu-grid {
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .benefits {
-        padding-inline: 5%;
-        gap: 1.25rem;
-    }
-}
-
-/* =====================================
-   9. MOBILE: 767px AND BELOW
-===================================== */
-
-@media (max-width: 767px) {
     .navbar {
         padding: 1rem 5%;
     }
 
-    /* Show the hamburger button */
     .menu-toggle {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 5px;
-
         width: 2.75rem;
         height: 2.75rem;
         padding: 0.5rem;
-
         border: 1px solid #454545;
         border-radius: 0.5rem;
         background-color: transparent;
@@ -554,58 +482,48 @@ footer p {
         height: 2px;
         border-radius: 2px;
         background-color: white;
-
-        transition:
-            transform 0.3s ease,
-            opacity 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    /* Slide-in navigation panel */
     .nav-links {
         position: absolute;
         top: 100%;
         right: 0;
-
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-
         width: min(85vw, 22rem);
-        min-height: 100vh;
-        padding: 1.5rem;
-
-        background-color: #171717;
+        /* Critical Fix for Landscape: Calculate height dynamically minus header & add overflow */
+        height: calc(100dvh - 4.5rem);
+        max-height: calc(100vh - 4.5rem);
+        overflow-y: auto;
+        padding: 1.5rem 1.5rem 3rem 1.5rem;
+        background-color: #1C3B2B;
         box-shadow: -0.5rem 1rem 1.5rem rgba(0, 0, 0, 0.2);
-
         transform: translateX(105%);
         visibility: hidden;
         pointer-events: none;
-
-        transition:
-            transform 0.35s ease,
-            visibility 0.35s ease;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
     }
 
     .nav-links a {
-        padding: 1rem 0.5rem;
-        border-bottom: 1px solid #333;
+        padding: 1.2rem 0.5rem;
+        border-bottom: 1px solid #2a5640;
     }
 
     .nav-links .nav-order {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         border-bottom: none;
         text-align: center;
     }
 
-    /* JavaScript adds this class when opened */
     .nav-links.active {
         transform: translateX(0);
         visibility: visible;
         pointer-events: auto;
     }
 
-    /* Animate the hamburger into an X */
     .menu-toggle.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
@@ -620,16 +538,13 @@ footer p {
 
     .hero {
         flex-direction: column;
-        align-items: stretch;
-        gap: 2rem;
-
-        min-height: auto;
-        padding: 3rem 6%;
         text-align: center;
+        padding: 4rem 5%;
+        gap: 2.5rem;
     }
 
     .hero-content {
-        max-width: none;
+        max-width: 100%;
     }
 
     .hero-description {
@@ -637,9 +552,58 @@ footer p {
     }
 
     .hero-image {
-        width: 100%;
-        max-width: none;
-        height: 17rem;
+        max-width: 25rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 3rem 5%;
+    }
+}
+
+/* =====================================
+   9. LANDSCAPE MOBILE FIXES
+===================================== */
+/* Triggers when device is wide but very short (e.g., sideways iPhone) */
+@media (max-width: 1023px) and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        padding: 3rem 5%;
+    }
+
+    .hero-image {
+        max-width: 16rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================================
+   10. MOBILE RESPONSIVENESS (<= 767px)
+===================================== */
+@media (max-width: 767px) {
+    .hero {
+        padding: 3rem 5%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-image {
+        max-width: 18rem;
     }
 
     .menu-section {
@@ -647,30 +611,16 @@ footer p {
     }
 
     .menu-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
+        grid-template-columns: 1fr;
     }
 
     .card-image {
-        height: 10rem;
-    }
-
-    .card-content {
-        padding: 1rem;
-    }
-
-    .card-bottom {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .add-btn {
-        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 
     .benefits {
         grid-template-columns: 1fr;
-        padding: 2.5rem 8%;
     }
 
     footer {
@@ -680,23 +630,14 @@ footer p {
 }
 
 /* =====================================
-   10. SMALL MOBILE: 400px AND BELOW
+   11. SMALL MOBILE (<= 400px)
 ===================================== */
-
 @media (max-width: 400px) {
     .logo {
         font-size: 1.2rem;
     }
 
     .hero h1 {
-        font-size: 2.25rem;
-    }
-
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card-image {
-        height: 13rem;
+        font-size: 2.1rem;
     }
 }
